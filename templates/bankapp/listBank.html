@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Bank-List</title>
+        <link rel="stylesheet" href="{% static "css/Bank.css"%}">
+    </head>
+    <body>
+        <h1>Bank-List Details..!!</h1>
+        <hr />
+        {%if Bank_list%}
+            <table>
+                <thead>
+                    <th>BankDate</th>
+                    <th>Bankname</th>
+                    <th>first-Name</th>
+                    <th>last-name</th>
+                    <th>AccountNumber</th>
+                    <th>IFSCcode</th>
+                    <th>Email</th>
+
+
+
+                </thead>
+                <tbody>
+                {%for Bank in Bank_list%}
+                    <tr>
+                        <td>{{Bank.Bankdate}}</td>
+                        <td>{{Bank.Bankname}}</td>
+                        <td>{{Bank.firstname}}</td>
+                        <td>{{Bank.lastname}}</td>
+                        <td>{{Bank.AccountNumber}}</td>
+                        <td>{{Bank.IFSCcode}}</td>
+                        <td>{{Bank.Email}}</td>
+
+
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+			<a href="/" >Home-Page</a>
+        {%else%}
+            <p>OOPs...No Bank Found!!</p>
+        {%endif%}
+</body>
+</html>
